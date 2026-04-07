@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadwal Sholat - BQ Islamic Boarding School</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <img
+            src="image/logo bq.png"
+            alt="BQ Islamic Boarding School Logo"
+            class="navbar-logo"
+          />
+        </a>
+
+        <div class="nav-button">
+          <a href="/index.html" class="nav-btn">Beranda</a>
+          <a href="/profile.html" class="nav-btn">Profil</a>
+          <a href="#" class="nav-btn">Kontak</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="top-info">
+          <div class="location-displagit inity">
+            <h1 id="lokasi">Memuat lokasi...</h1>
+            <p id="tanggal-hari-ini">Memuat tanggal...</p>
+          </div>
+          <div class="clock-display">
+            <p id="live-clock">--:--:--</p>
+          </div>
+        </div>
+
+        <div id="next-prayer-info" class="next-prayer-info">
+          <h2>Waktu Sholat Berikutnya:</h2>
+          <p>
+            <span id="next-prayer-name">---</span> dalam
+            <span id="countdown-timer">--:--:--</span>
+          </p>
+        </div>
+
+        <div class="jadwal-cards">
+          <div class="card" data-prayer="Subuh">
+            <h2>Subuh</h2>
+            <p id="subuh">--:--</p>
+          </div>
+          <div class="card" data-prayer="Dzuhur">
+            <h2>Dzuhur</h2>
+            <p id="dzuhur">--:--</p>
+          </div>
+          <div class="card" data-prayer="Ashar">
+            <h2>Ashar</h2>
+            <p id="ashar">--:--</p>
+          </div>
+          <div class="card" data-prayer="Maghrib">
+            <h2>Maghrib</h2>
+            <p id="maghrib">--:--</p>
+          </div>
+          <div class="card" data-prayer="Isya">
+            <h2>Isya</h2>
+            <p id="isya">--:--</p>
+          </div>
+        </div>
+
+        <div class="location-feature">
+          <div class="search-box">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Cari nama kota..."
+            />
+            <button id="search-button">Cari</button>
+          </div>
+          <button id="detect-location-button">Gunakan Lokasi Saat Ini</button>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <img src="image/logo bq.png" alt="Logo BQ" class="footer-logo" />
+          <p>
+            BQ Islamic Boarding School berkomitmen membentuk generasi Qurani
+            yang berilmu, berakhlak, dan berkontribusi bagi umat.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Tautan Cepat</h3>
+          <ul>
+            <li><a href="/index.html">Beranda</a></li>
+            <li><a href="/profile.html">Profil</a></li>
+            <li><a href="">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Hubungi Kami</h3>
+          <p>Email: yafifahhama@gmail.com</p>
+          <p>Telepon: +62 857-9339-9394</p>
+          <p>Alamat: Bogor, Jawa Barat, Indonesia</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Yafi arkan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

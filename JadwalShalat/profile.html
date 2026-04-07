@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil - BQ Islamic Boarding School</title>
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <img
+            src="image/logo bq.png"
+            alt="BQ Islamic Boarding School Logo"
+            class="navbar-logo"
+          />
+        </a>
+
+        <div class="nav-button">
+          <a href="/index.html" class="nav-btn">Beranda</a>
+          <a href="/profile.html" class="nav-btn">Profil</a>
+          <a href="#" class="nav-btn">Kontak</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PROFILE SECTION -->
+    <main>
+      <section class="profile-section">
+        <div class="profile-header">
+          <img
+            src="image/Screenshot 2025-10-14 135200.png"
+            alt="BQ Arena"
+            class="profile-image"
+          />
+          <div class="profile-title">
+            <h1>BQ Islamic Boarding School</h1>
+            <p>Mencetak Generasi Qurani Berakhlak Mulia</p>
+          </div>
+        </div>
+
+        <div class="profile-content">
+          <h2>Tentang Kami</h2>
+          <p>
+            BQ Islamic Boarding School adalah lembaga pendidikan Islam terpadu
+            yang berfokus pada pembelajaran Al-Qur'an, akademik, dan karakter.
+            Kami berkomitmen untuk mencetak generasi muda yang cerdas, berakhlak
+            mulia, serta berdaya saing global tanpa meninggalkan nilai
+            keislaman.
+          </p>
+
+          <h2>Visi & Misi</h2>
+          <ul>
+            <li>
+              <strong>Visi:</strong> Menjadi lembaga pendidikan Islam unggul
+              dalam membentuk generasi Qurani yang berilmu dan berakhlak.
+            </li>
+            <li>
+              <strong>Misi:</strong>
+              <ul>
+                <li>Menanamkan nilai-nilai Al-Qur'an dalam kehidupan siswa.</li>
+                <li>
+                  Mengembangkan potensi akademik dan spiritual secara seimbang.
+                </li>
+                <li>
+                  Membentuk karakter tangguh, disiplin, dan peduli sesama.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2>Program Unggulan</h2>
+          <div class="program-grid">
+            <div class="program-card">
+              <h3>Tahfidz Al-Qur'an</h3>
+              <p>
+                Pembinaan hafalan dengan metode talaqqi dan murojaah harian.
+              </p>
+            </div>
+            <div class="program-card">
+              <h3>Pendidikan Formal</h3>
+              <p>Kurikulum nasional berpadu dengan nilai-nilai Islam.</p>
+            </div>
+            <div class="program-card">
+              <h3>Leadership & Skill</h3>
+              <p>
+                Pelatihan kepemimpinan, kewirausahaan, dan keterampilan praktis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="profile-container">
+      <div class="profile-left">
+        <img src="image/BQ RESTO.png" alt="Profile BQ" class="main-image" />
+      </div>
+
+      <div class="profile-right">
+        <div class="gallery">
+          <img src="image/archery.png" alt="Archery" class="gallery-img" />
+          <img src="image/ngaji.png" alt="Study" class="gallery-img" />
+          <img src="image/ngantri.png" alt="Soccer" class="gallery-img" />
+          <img src="image/tekwondo.png" alt="Class" class="gallery-img" />
+          <img src="image/boncahe.png" alt="Swimming" class="gallery-img" />
+          <img src="image/ripat.png" alt="Laptop" class="gallery-img" />
+          <img src="image/futsal.png" alt="Karate" class="gallery-img" />
+          <img src="image/ipa.png" alt="Lab" class="gallery-img" />
+          <img src="image/dkv.png" alt="Quran" class="gallery-img" />
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal untuk tampilan gambar besar -->
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" />
+    </div>
+
+    <script>
+      // Ambil semua gambar galeri
+      const images = document.querySelectorAll(".gallery-img");
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      const closeBtn = document.querySelector(".close");
+
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      // Klik di luar gambar juga bisa menutup
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 BQ Islamic Boarding School. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
