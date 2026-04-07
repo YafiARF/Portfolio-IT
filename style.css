@@ -1,0 +1,352 @@
+/* Variabel Warna */
+:root {
+  --white: #ffffff;
+  --cream: #f9f7f2;
+  --black: #1a1a1a;
+  --gray: #757575;
+  --transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+/* --- Loader --- */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cream);
+  transition: opacity 0.8s ease;
+}
+
+/* --- Navigasi --- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 40px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+nav.scrolled {
+  padding: 20px 8%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--black);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 100vh;
+  background: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 8%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: 25px;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.8s;
+}
+
+.hero p {
+  color: var(--gray);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-inline: auto;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 1s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 18px 45px;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 1.2s;
+}
+
+.btn:hover {
+  background: #333;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Section General --- */
+section {
+  padding: 140px 8%;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 80px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* --- Tentang --- */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-img {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-radius: 30px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: var(--transition);
+}
+
+.about-img:hover img {
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+
+/* --- Karya (2 Kolom) --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.portfolio-item {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+  background: var(--cream);
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+/* --- Find Me (3 Kolom) --- */
+.find-me-section {
+  background: var(--cream);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.social-item {
+  background: var(--white);
+  padding: 60px 40px;
+  text-decoration: none;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  position: relative;
+}
+
+.social-item:hover {
+  border-color: var(--black);
+  transform: translateY(-8px);
+}
+
+.social-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+
+.social-handle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.social-arrow {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.2;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-item:hover .social-arrow {
+  opacity: 1;
+  transform: translate(4px, -4px);
+}
+
+/* --- Animasi Reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  padding: 80px 8%;
+  text-align: center;
+  background: var(--black);
+  color: var(--cream);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+  .about-container,
+  .portfolio-grid,
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-img {
+    height: 400px;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
